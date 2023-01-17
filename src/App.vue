@@ -1,15 +1,31 @@
 <template>
+  <MeuHeader v-if="showHeader"/>
+  <div>
+    Nome: {{ fistName }}
+    <br>
+    Sobrenome: {{ lastName }}
+  </div>
+
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import MeuHeader from './components/MeuHeader.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    MeuHeader
+  },
+  data() {
+    return {
+      showHeader: false,
+      fistName: 'Patrick',
+      lastName: 'Simões',
+    }
   }
 }
 </script>
